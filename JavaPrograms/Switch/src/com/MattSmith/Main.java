@@ -41,7 +41,6 @@ public class Main {
         //A, B, C, D or E
         //display a message if any of these are found and then break
         //add a default which displays a message saying not found
-
         char charSwitchValue = 'C';
 
 	    switch(charSwitchValue) {
@@ -56,6 +55,19 @@ public class Main {
                 break;
             default:
                 System.out.println("You char is not A, B, C, D or E. Your char is " + charSwitchValue);
+                break;
+        }
+
+        String month = "JuNe";
+	    switch(month.toLowerCase()) {
+            case "january":
+                System.out.println("Jan");
+                break;
+            case "june":
+                System.out.println("Jun");
+                break;
+            default:
+                System.out.println("Not sure");
                 break;
         }
 
