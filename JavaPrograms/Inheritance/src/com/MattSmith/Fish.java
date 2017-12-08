@@ -16,12 +16,12 @@ public class Fish extends Animal {
 
     }
 
-    private void moveMuscles() {
+    public void moveMuscles() {
         System.out.println("moveMuscles() called");
 
     }
 
-    private void moveBackFin() {
+    public void moveBackFin() {
         System.out.println("moveBackFin() called.");
 
     }
