@@ -31,6 +31,8 @@ public class Dog extends Animal {
 
     public void walk() {
         System.out.println("Dog.walk() called");
+        //don't look in current class
+        //Only execute the move method in the super class (animal class);
         super.move(5);
     }
 

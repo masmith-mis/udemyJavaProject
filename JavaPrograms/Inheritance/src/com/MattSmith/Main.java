@@ -7,9 +7,12 @@ public class Main {
         Animal animal = new Animal("Animal", 1, 1, 5, 5);
 
         Dog dog = new Dog("yorkie", 8, 20, 2, 4, 1, 20,"long silky");
-        //dog.eat();
+        dog.eat();
         dog.walk();
-        //dog.run();
+        dog.run();
+
+        Fish fish = new Fish("marlin", 20, 20, 2, 2, 3);
+        fish.swim(5);
 
     }
 }
