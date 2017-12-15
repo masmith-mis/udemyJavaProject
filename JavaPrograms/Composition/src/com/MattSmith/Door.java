@@ -7,8 +7,8 @@ public class Door {
         this.numberOfDoors = numberOfDoors;
     }
 
-    public void adjarDoor() {
-        System.out.println("Door -> You have opened the door");
+    public void adjarDoor(String name) {
+        System.out.println("Door -> " + name + " has opened the door");
     }
 
     public int getNumberOfDoors() {

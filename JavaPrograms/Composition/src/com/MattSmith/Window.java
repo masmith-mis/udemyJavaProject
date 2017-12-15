@@ -7,8 +7,8 @@ public class Window {
         this.windows = windows;
     }
 
-    public void adjarWindow() {
-        System.out.println("Window -> You have opened the window");
+    public void adjarWindow(String name) {
+        System.out.println("Window -> " + name + "  has opened the window");
     }
 
     public int getWindows() {

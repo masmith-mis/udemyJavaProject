@@ -5,7 +5,7 @@ public class PC {
     private Case theCase;
     //PC - HAS A - Monitor
     private Monitor monitor;
-
+    //PC - HAS A - Motherboard
     private Motherboard motherboard;
 
     public PC(Case theCase, Monitor monitor, Motherboard motherboard) {
@@ -19,7 +19,7 @@ public class PC {
         drawLogo();
     }
 
-    public void drawLogo() {
+    private void drawLogo() {
         //Fancy graphics here
         monitor.drawPixelAt(1200,50,"yellow");
     }

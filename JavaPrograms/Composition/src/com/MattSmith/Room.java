@@ -13,7 +13,7 @@ public class Room {
 
     public void openDoor() {
         System.out.println("Room -> Opening door");
-        door.adjarDoor();
+        door.adjarDoor("Matt");
     }
 
     public void powerOnTv() {
