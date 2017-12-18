@@ -18,5 +18,6 @@ public class Main {
         System.out.println("Pages printed = " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted() + " Toner level = " + printer.getTonerLevel());
         pagesPrinted = printer.printPages(2);
         System.out.println("Pages printed = " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted() + " Toner level = " + printer.getTonerLevel());
+
     }
 }
