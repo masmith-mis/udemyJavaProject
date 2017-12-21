@@ -1,5 +1,102 @@
 package com.MattSmith;
 
+class Car {
+    private String name;
+    private boolean engine;
+    private int cylinders;
+    private int wheels;
+
+    public Car(String name, int cylinders) {
+        this.name = name;
+        this.engine = true;
+        this.cylinders = cylinders;
+        this.wheels = 4;
+    }
+
+    public String startEngine() {
+        return "Car -> startEngine()";
+    }
+
+    public String accelerate() {
+        return "Car -> accelerate()";
+    }
+
+    public String brake() {
+        return "Car -> brake()";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCylinders() {
+        return cylinders;
+    }
+}
+
+class ES300 extends Car {
+    public ES300() {
+        super("Lexus ES300", 6);
+    }
+
+    @Override
+    public String startEngine() {
+        return "ES300 -> startEngine()";
+    }
+
+    @Override
+    public String accelerate() {
+        return "ES300 -> accelerate()";
+    }
+
+    @Override
+    public String brake() {
+        return "ES300 -> brake()";
+    }
+}
+
+class Civic extends Car {
+    public Civic() {
+        super("Honda Civic", 4);
+    }
+
+    @Override
+    public String startEngine() {
+        return getClass().getSimpleName() + " -> startEngine()";
+    }
+
+    @Override
+    public String accelerate() {
+        return getClass().getSimpleName() + " -> accelerate()";
+    }
+
+    @Override
+    public String brake() {
+        return getClass().getSimpleName() + " -> break()";
+    }
+}
+
+class Mustang extends Car {
+    public Mustang() {
+        super("Ford Mustang", 8);
+    }
+
+    @Override
+    public String startEngine() {
+        return getClass().getSimpleName() + " -> startEngine()";
+    }
+
+    @Override
+    public String accelerate() {
+        return getClass().getSimpleName() + " -> accelerate()";
+    }
+
+    @Override
+    public String brake() {
+        return getClass().getSimpleName() + " -> break()";
+    }
+}
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,6 +115,32 @@ public class Main {
         // Now create 3 sub classes for your favorite vehicles.
         // Override the appropriate methods to demonstrate polymorphism in use
         // put all classes in the one java file (this one).
+        for (int i = 1; i<=10; i++) {
+            Car car = selectCar();
+            System.out.println("Random car " + car.getName()
+                                + "\n" + "Cylinders: " + car.getCylinders()
+                                + "\n" + "Start Engine: " + car.startEngine()
+                                + "\n" + "Speed: " + car.accelerate()
+                                + "\n" + "Break: " + car.brake());
+        }
+    }
 
+    public static Car selectCar(){
+        int randomNumber = (int) (Math.random() * 3) + 1;
+        System.out.println("Random number generated was " + randomNumber);
+
+        switch (randomNumber) {
+            case 1:
+                return new ES300();
+
+            case 2:
+                return new Civic();
+
+            case 3:
+                return new Mustang();
+
+            default:
+                return null;
+        }
     }
 }

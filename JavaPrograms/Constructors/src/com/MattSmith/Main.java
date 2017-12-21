@@ -14,49 +14,39 @@ public class Main {
         // You will want to create various code in the Main class (the one created by IntelliJ) to
         // confirm your code is working.
         // Add some System.out.println's in the two methods above as well.
-
-        //new Account() - this is calling the constructor.
-        Account stefsAccount = new Account();
-        Account mattsAccount = new Account("12345", 0.00, "Matt Smith", "matt@gmail.com", "(817)897-1008");
-        Account timsAccount = new Account("Tim", "Tim@email.com", "12345");
-//        System.out.println(timsAccount.getNumber() + " name " + timsAccount.getCustomerName());
-//        System.out.println(stefsAccount.getNumber());
-//        System.out.println(stefsAccount.getBalance());
+//        Account mattsAccount = new Account("12345", 0, "Matt", "matt@gmail.com", "8178971008");
 //
-//        System.out.println(mattsAccount.getNumber());
-//        System.out.println(mattsAccount.getCustomerName());
-//        System.out.println(mattsAccount.getBalance());
-//        System.out.println(mattsAccount.getCustomerEmailAddress());
-//        System.out.println(mattsAccount.getCustomerPhoneNumber());
-
-
-        mattsAccount.withdrawal(100.00);
-
-        mattsAccount.deposit(50.00);
-        mattsAccount.withdrawal(100.00);
-
-        mattsAccount.deposit(51.00);
-        mattsAccount.withdrawal(101.00);
-
-        //Create a new class called VipCustomer
-        //it should have 3 fields name, credit limit, and email address.
-        //create 3 constructors.
-        //1st constructor empty should call the constructor with 3 parameters with default values
-        //2nd constructor should pass on the 2 values it receives and add a default for the 3rd
-        //3rd constructor should save all fields.
-        //create getters only for this using code generation of intellij as setters wont be needed
-        //test and confirm it works.
-
-//        VipCustomers mattsAccount = new VipCustomers();
-//        System.out.println("Name: " + mattsAccount.getName() + " Credit Limit: " + mattsAccount.getCreditLimit() + " Email: " + mattsAccount.getEmailAddress());
+//        mattsAccount.depositFunds(50);
+//        mattsAccount.withdrawFunds(140);
 //
-//        VipCustomers timsAccount = new VipCustomers("tim", 60000.00);
-//        System.out.println("Name: " + timsAccount.getName() + " Credit Limit: " + timsAccount.getCreditLimit() + " Email: " + timsAccount.getEmailAddress());
+//        mattsAccount.depositFunds(100);
+//        mattsAccount.withdrawFunds(149);
 //
-//        VipCustomers stefaniesAccount = new VipCustomers("stefanie", 80000.00, "stef@gmail.com");
-//        System.out.println("Name: " + stefaniesAccount.getName() + " Credit Limit: " + stefaniesAccount.getCreditLimit() + " Email: " + stefaniesAccount.getEmailAddress());
+//        mattsAccount.withdrawFunds(1);
 
+        // Create a new class VIPCustomer
+        // it should have 3 fields name, credit limit, and email address
+        // create 3 constructors
+        // 1st constructor empty should call the constructor wtih 3 parameters with default values
+        // 2nd constructor should pass on the 2 values it receives and add a default value for the 3rd
+        // 3rd constructor should save all fields
+        // create getters only for this using code generation (setters won't be needed)
+        // test and confirm it works.
 
+        VipCustomers stefsAccount  = new VipCustomers();
+        System.out.println(stefsAccount.getName());
+        System.out.println(stefsAccount.getCreditLimit());
+        System.out.println(stefsAccount.getEmail());
+
+        VipCustomers timsAccount = new VipCustomers("Tim", 20000);
+        System.out.println(timsAccount.getName());
+        System.out.println(timsAccount.getCreditLimit());
+        System.out.println(timsAccount.getEmail());
+
+        VipCustomers mattsAccount = new VipCustomers("Matt", 30000, "matt@gmail.com");
+        System.out.println(mattsAccount.getName());
+        System.out.println(mattsAccount.getCreditLimit());
+        System.out.println(mattsAccount.getEmail());
 
     }
 }

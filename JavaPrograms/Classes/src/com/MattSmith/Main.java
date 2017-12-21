@@ -10,6 +10,7 @@ public class Main {
         porsche.setModel("Carrera");
         toyota.setModel("Camry");
         honda.setModel("Civic");
+        //honda.setModel("Acura");
         System.out.println("Model is " + porsche.getModel());
         System.out.println("Model is " + toyota.getModel());
         System.out.println("Model is " + honda.getModel());

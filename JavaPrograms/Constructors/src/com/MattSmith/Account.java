@@ -1,91 +1,63 @@
 package com.MattSmith;
 
 public class Account {
-    private String number;
+
+    private String accountNumber;
     private double balance;
     private String customerName;
-    private String customerEmailAddress;
-    private String customerPhoneNumber;
+    private String customerEmail;
+    private String phoneNumber;
 
-    //create a constructor
     public Account() {
-        //if no parameters are given, use these default parameters.
-        //this has to be the very first statement in the constructor body
-        this("56789", 2.50, "Default Name", "Default Address", "Default Phone");
-        System.out.println("Empty Constructor called");
+        this("56789", 0, "Default Name", "Default address", "default phone");
+        System.out.println("Empty constructor called");
+
     }
 
-    //overload the above account constructor
-    public Account(String number, double balance, String customerName, String customerEmailAddress, String customerPhoneNumber) {
-        System.out.println("Account constructor with parameters called");
-        this.number = number;
+    public Account(String accountNumber, double balance, String customerName, String customerEmail, String phoneNumber) {
+        this.accountNumber = accountNumber;
         this.balance = balance;
         this.customerName = customerName;
-        this.customerEmailAddress = customerEmailAddress;
-        this.customerPhoneNumber = customerPhoneNumber;
+        this.customerEmail = customerEmail;
+        this.phoneNumber = phoneNumber;
     }
 
-    public Account(String customerName, String customerEmailAddress, String customerPhoneNumber) {
-        this("99999",100.55, customerName, customerEmailAddress, customerPhoneNumber);
+    public Account(String customerName, String customerEmail, String phoneNumber) {
+        this("9999", 100.55, customerName, customerEmail, phoneNumber);
     }
 
-    //This method handles deposits - has a parameter of depositAmount
-    //this.balance += depositAmount -- this means adds to the balance.
-    public void deposit(double depositAmount) {
+    public void depositFunds(double depositAmount) {
         this.balance += depositAmount;
-        System.out.println("Deposit of " + depositAmount + " made. New balance " + this.balance);
-
+        System.out.println("Funds have been added. Your current balance is " + balance);
     }
 
-    //This method handles withdraw - has a parameter of withdrawalAmount
-    //The if statement checks to see if there is sufficient funds.
-    //balance -= withdrawalAmount means we deduct the withdrawalAmount from the balance.
-    public void withdrawal(double withdrawalAmount) {
-        if ((this.balance - withdrawalAmount) < 0) {
+    public void withdrawFunds(double withdrawalAmount) {
+        if (this.balance - withdrawalAmount < 0) {
             System.out.println("Only " + this.balance + " available. Withdrawal not processed");
         } else {
-            this.balance -= withdrawalAmount;
+            balance -= withdrawalAmount;
             System.out.println("Withdrawal of " + withdrawalAmount + " processed. Remaining balance = " + this.balance);
         }
     }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
     public double getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
     public String getCustomerName() {
         return customerName;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public String getCustomerEmail() {
+        return customerEmail;
     }
 
-    public String getCustomerEmailAddress() {
-        return customerEmailAddress;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setCustomerEmailAddress(String customerEmailAddress) {
-        this.customerEmailAddress = customerEmailAddress;
-    }
-
-    public String getCustomerPhoneNumber() {
-        return customerPhoneNumber;
-    }
-
-    public void setCustomerPhoneNumber(String customerPhoneNumber) {
-        this.customerPhoneNumber = customerPhoneNumber;
-    }
 }
