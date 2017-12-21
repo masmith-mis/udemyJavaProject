@@ -5,7 +5,7 @@ public class Monitor {
     private String manufacturer;
     private int size;
     //composition:
-    //the resolution is a component of the monitor (it HAS A)
+    //the resolution is a component of the monitor (it HAS A resolution)
     private Resolution nativeResolution;
 
     public Monitor(String model, String manufacturer, int size, Resolution nativeResolution) {
