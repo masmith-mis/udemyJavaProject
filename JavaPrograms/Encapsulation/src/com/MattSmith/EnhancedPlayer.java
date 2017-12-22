@@ -8,6 +8,7 @@ public class EnhancedPlayer {
     public EnhancedPlayer(String name, int health, String weapon) {
         this.name = name;
 
+        //The value of health cannot be lower than 1 or greater than 100.
         if(health > 0 && health <= 100) {
             this.hitPoints = health;
         }

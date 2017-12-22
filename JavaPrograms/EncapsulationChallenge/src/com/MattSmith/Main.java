@@ -13,11 +13,12 @@ public class Main {
         // Decide on the scope, whether to use constructors, and anything else you think is needed.
 
         Printer printer = new Printer(50, false);
-        System.out.println("Initial pages count = " + printer.getPagesPrinted() + " Initial toner level = " + printer.getTonerLevel());
+        System.out.println("Initial page count = " + printer.getPagesPrinted());
         int pagesPrinted = printer.printPages(4);
-        System.out.println("Pages printed = " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted() + " Toner level = " + printer.getTonerLevel());
+        System.out.println("Pages printed was: " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted());
         pagesPrinted = printer.printPages(2);
-        System.out.println("Pages printed = " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted() + " Toner level = " + printer.getTonerLevel());
+        System.out.println("Pages printed was: " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted());
+
 
     }
 }

@@ -19,5 +19,6 @@ public class Main {
 
 		EnhancedPlayer player = new EnhancedPlayer("Tim", 200, "Sword");
 		System.out.println("Initial health is " + player.getHealth());
+		player.loseHealth(120);
     }
 }
