@@ -1,112 +1,73 @@
 package com.MattSmith;
 
 public class Hamburger {
-    // The basic hamburger should have the following items.
-    // bread roll type, meat and up to 4 additional additions (things like lettuce, tomato, carrot, etc) that
-    // the customer can select to be added to the burger. Each one of these items gets charged an additional
-    // price so you need some way to track how many items got added and to calculate the price (for the base
-    // burger and all the additions).
-    //
-    // This burger has a base price and the additions are all seperately priced.
-    //
-    // Create a Hamburger class to deal with all the above.
-    //
-    // The constructor should only include the roll type, meat and price.
-    private String breadType;
+    private String name;
     private String meat;
     private double price;
-    private boolean lettuce;
-    private boolean tomato;
-    private boolean carrot;
-    private boolean onion;
+    private String breadRollType;
 
-    public Hamburger(String breadType, String meat) {
-        this.breadType = breadType;
+    private String addition1Name;
+    private double addition1Price;
+
+    private String addition2Name;
+    private double addition2Price;
+
+    private String addition3Name;
+    private double addition3Price;
+
+    private String addition4Name;
+    private double addition4Price;
+
+    public Hamburger(String name, String meat, double price, String breadRollType) {
+        this.name = name;
         this.meat = meat;
-        this.price = 5.00;
+        this.price = price;
+        this.breadRollType = breadRollType;
     }
 
-    //try addExtras method --
+    public void addHamburgerAddition1(String name, double price) {
+        this.addition1Name = name;
+        this.addition1Price = price;
+    }
 
-    public double addLettuce(boolean lettuce){
-        double lettucePrice = 1.00;
+    public void addHamburgerAddition2(String name, double price) {
+        this.addition2Name = name;
+        this.addition2Price = price;
+    }
 
-        if(lettuce) {
-            System.out.println("Current price is: " + price);
-            System.out.println("Customer added lettuce. Additional charge is: " + lettucePrice);
-            System.out.println("New price is: " + (price + lettucePrice));
-            return price += lettucePrice;
+    public void addHamburgerAddition3(String name, double price) {
+        this.addition3Name = name;
+        this.addition3Price = price;
+    }
+
+    public void addHamburgerAddition4(String name, double price) {
+        this.addition4Name = name;
+        this.addition4Price = price;
+    }
+
+    //method to check if we got an addition added and add that price to the base price:
+    //start with a base price - then check to see if we received an additional item, if so add that price to the total
+    public double itemizeHamburger() {
+        double hamburgerPrice = this.price;
+        System.out.println(this.name + " hamburger " + " on a " + this.breadRollType + " roll "
+                   + " with " + this.meat + ", price is " + this.price);
+
+        if(this.addition1Name != null) {
+            hamburgerPrice += this.addition1Price;
+            System.out.println("Added " + this.addition1Name + " for an extra " + this.addition1Price);
         }
-        System.out.println("Current price is: " + price);
-        return price;
-    }
-
-    public double addTomato(boolean tomato){
-        double tomatoPrice = 1.00;
-
-        if(tomato) {
-            System.out.println("Current price is: " + price);
-            System.out.println("Customer added tomatoes. Additional charge is: " + tomatoPrice);
-            System.out.println("New price is: " + (price + tomatoPrice));
-            return price += tomatoPrice;
+        if(this.addition2Name != null) {
+            hamburgerPrice += this.addition2Price;
+            System.out.println("Added " + this.addition2Name + " for an extra " + this.addition2Price);
         }
-        System.out.println("Current price is: " + price);
-        return price;
-    }
-
-    public double addCarrot(boolean carrot) {
-        double carrotPrice = 1.00;
-
-        if(carrot){
-            System.out.println("Current price is: " + price);
-            System.out.println("Customer added carrots. Additional charge is: " + carrotPrice);
-            System.out.println("New price is: " + (price + carrotPrice));
-            return price += carrotPrice;
+        if(this.addition3Name != null) {
+            hamburgerPrice += this.addition3Price;
+            System.out.println("Added " + this.addition3Name + " for an extra " + this.addition3Price);
         }
-        System.out.println("Current price is: " + price);
-        return price;
-    }
-
-    public double addOnion(boolean onion){
-        double onionPrice = 1.00;
-
-        if(onion){
-            System.out.println("Current price is: " + price);
-            System.out.println("Customer added onions. Additional charge is: " + onionPrice);
-            System.out.println("New price is: " + (price + onionPrice));
-            return price += onionPrice;
+        if(this.addition4Name != null) {
+            hamburgerPrice += this.addition4Price;
+            System.out.println("Added " + this.addition4Name + " for an extra " + this.addition4Price);
         }
-        System.out.println("Current price is: " + price);
-        return price;
-    }
-
-
-
-    public String getBreadType() {
-        return breadType;
-    }
-
-    public String getMeat() {
-        return meat;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public boolean isLettuce() {
-        return lettuce;
-    }
-
-    public boolean isTomato() {
-        return tomato;
-    }
-
-    public boolean isCarrot() {
-        return carrot;
-    }
-
-    public boolean isOnion() {
-        return onion;
+        return hamburgerPrice;
     }
 }
