@@ -6,6 +6,7 @@ class Car {
     private int cylinders;
     private int wheels;
 
+    //Use name and cylinders as parameters & Initialize all 4 values.
     public Car(String name, int cylinders) {
         this.name = name;
         this.engine = true;
@@ -24,6 +25,8 @@ class Car {
     public String brake() {
         return "Car -> brake()";
     }
+
+    //Do no need getters for Wheels/Engine becasue they are set to 4 / true.
 
     public String getName() {
         return name;
@@ -56,6 +59,10 @@ class ES300 extends Car {
 }
 
 class Civic extends Car {
+//    public Civic(String name, int cylinders) {
+//        super(name, cylinders);
+//    }
+
     public Civic() {
         super("Honda Civic", 4);
     }
