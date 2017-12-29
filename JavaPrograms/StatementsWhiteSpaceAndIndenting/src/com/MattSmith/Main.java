@@ -11,6 +11,5 @@ public class Main {
         //the method call below is println
         System.out.println("This is a test " + myVariable);
 
-
     }
 }
