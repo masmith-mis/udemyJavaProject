@@ -13,36 +13,56 @@ public class GroceryList {
         groceryList.add(item);
     }
 
+    public ArrayList<String> getGroceryList() {
+        return groceryList;
+    }
+
     //print the grocery list
     public void printGroceryList() {
         //size will return how many elements are stored in the ArrayList
         System.out.println("You have " + groceryList.size() + " items in your grocery list");
         for(int i=0; i<groceryList.size(); i++){
-            System.out.println((i+1) + " . " + groceryList.get(i));
+            System.out.println((i+1) + ". " + groceryList.get(i));
+        }
+    }
+
+    public void modifyGroceryItem(String currentItem, String newItem) {
+        int position = findItem(currentItem);
+        if(position >= 0) {
+            modifyGroceryItem(position, newItem);
         }
     }
 
     //modify your list
-    public void modifyGroceryItem(int position, String newItem) {
+    private void modifyGroceryItem(int position, String newItem) {
         //replaces that item in the position
         groceryList.set(position, newItem);
         System.out.println("Grocery Item " + (position+1) + " has been modified.");
     }
 
+    public void removeGroceryItem(String item) {
+        int position = findItem(item);
+        if(position >= 0) {
+            removeGroceryItem(position);
+        }
+    }
+
     //remove an item
-    public void removeGroceryItem(int position) {
-        String theItem = groceryList.get(position);
+    private void removeGroceryItem(int position) {
         groceryList.remove(position);
     }
 
-    //query the ArrayList to find an item
-    public String findItem(String searchItem) {
-//        boolean exists = groceryList.contains(searchItem);
+    //query the ArrayList (GroceryList) to find an item
+    private int findItem(String searchItem) {
+        return groceryList.indexOf(searchItem);
+    }
 
-        int position = groceryList.indexOf(searchItem);
-        if(position >= 0) {
-            return groceryList.get(position);
+    public boolean onFile(String searchItem) {
+        int position = findItem(searchItem);
+        if (position >= 0) {
+            return true;
+        } else {
+            return false;
         }
-        return null;
     }
 }
